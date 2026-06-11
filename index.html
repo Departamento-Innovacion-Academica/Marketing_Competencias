@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarjetas Interactivas</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    min-height: 100vh;
+    background: #27728f;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 35px;
+  }
+
+  .instruction {
+    color: #fff;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 500;
+    text-align: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .card {
+    width: 98%;
+    max-width: 1300px;
+    min-height: 350px;
+    background: #27728f;
+    transition: all 0.4s ease-in-out;
+    border-radius: 18px;
+    box-shadow: 0px 10px 25px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 15px 35px 12px rgba(255, 255, 255, 0.5);
+  }
+
+  .first-content, 
+  .second-content {
+    position: absolute;
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+    backface-visibility: hidden;
+    padding: 40px;
+  }
+
+  .first-content {
+    background: #00779A;
+    border-radius: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .second-content {
+    background: #fff;
+    transform: rotateY(180deg);
+    border-radius: 18px;
+    z-index: 0;
+    opacity: 0;
+  }
+
+  .second-content span {
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
+    line-height: 1.7;
+    text-align: left;
+    color: #000;
+    font-weight: 500;
+  }
+
+  .card:hover .first-content {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+
+  .card:hover .second-content {
+    transform: rotateY(0deg);
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .title {
+    display: block;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<!-- Instruccción -->
+<div class="instruction">
+  👉 Pase el mouse sobre las tarjetas para ampliar la información
+</div>
+
+<!-- Primera Tarjeta -->
+<div class="card">
+  <div class="first-content">
+    <div>
+      <span class="title">Primera competencia</span>
+    </div>
+  </div>
+  <div class="second-content">
+    <span>Al finalizar esta actividad pedagógico-curricular el estudiante estará en capacidad de desarrollar proyectos empresariales que articulen los escenarios que pertenecen al Marketing Digital tanto teóricos como prácticos que incluyen a la investigación e innovación y que permitan la creación de grupos empresariales capaces de crear productos y estrategias de ofrecimiento de estos artículos que lleve al fin satisfactorio de utilizar con la calidad digna el mercado y la economía tecnológica así como del concepto central Marketing Digital a nivel local, regional, nacional e internacional.</span>
+  </div>
+</div>
+
+<!-- Segunda Tarjeta -->
+<div class="card">
+  <div class="first-content">
+    <div>
+      <span class="title">Segunda competencia</span>
+    </div>
+  </div>
+  <div class="second-content">
+    <span>Al finalizar este ejercicio pedagógico - curricular, el estudiante estará en capacidad de analizar de manera reflexiva y critica los avances que de nivel macro y global a presentado el tema objeto de estudio esto apoyados con herramientas tecnológicas tanto teóricas como de corte practico para realizar la discusión de los dichos avances detectados en el funcionamiento de nuestro tema a estudiar.</span>
+  </div>
+</div>
+
+</body>
+</html>
